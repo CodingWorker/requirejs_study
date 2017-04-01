@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>config in page</title>
+	<script src="./scripts/require.js"></script>
+	<script>
+	//config
+		require.config({
+			//the root path to search modules
+			baseUrl:'./scripts',
+			//定义一些模块的特殊加载路径,没有以/和http开头的话则默认为相对baseUrl的路径
+			paths:{
+				some:'some/to/path/some.js',
+				index:'../index/index'
+			},
+			waitSeconds:15
+		});
+
+		//1、首页模块加载,依赖项的路径都是相对于baseUrl的
+		//require(['jquery', '../index/index'],
+		
+		//2、也可以将index模块的路径定义在pahts中
+		require(['jquery', 'index'],
+			function($, index){
+				alert($);
+				console.log(index.color);
+				console.log(index.size);
+				console.log(require.toUrl('cc'));//也是以baseUrl为相对路径->./scripts/cc/
+			});
+		//执行流程
+		//1、 首先加载配置项
+		//2、加载首页模块并执行这个模块的方法
+	</script>
+</head>
+<body>
+
+</body>
+</html>
