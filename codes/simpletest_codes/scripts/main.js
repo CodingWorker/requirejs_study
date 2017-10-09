@@ -1,7 +1,8 @@
-//set the config of requirejs
+//set the config of this app when using requirejs
 requirejs.config=({
 	//set the baseurl,use when default
 	baseUrl:'scripts',
+	// path.config
 	paths:{
 		//if the module id start with app,then load it from the
 		//app directory
@@ -12,10 +13,10 @@ requirejs.config=({
 	}
 });
 
-requirejs(['index'],
-	function(index){
-		index.alertJ(12);
-	});
+// requirejs(['index'],
+// 	function(index){
+// 		index.alert(12);
+// 	});
 // requirejs(
 // 	//set the 依赖项
 // 	['jquary', 'index'],
@@ -23,3 +24,8 @@ requirejs(['index'],
 // 	function($, index){
 // 		console.log($)
 // 	});
+
+requirejs(['usespecialjs'],
+	function(usespecialjs){
+		console.log(usespecialjs);
+	});
