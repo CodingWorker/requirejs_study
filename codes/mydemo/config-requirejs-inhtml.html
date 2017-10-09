@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>config requirejs in html</title>
+	<script src="./js/lib/require.js"></script>
+	<script type="text/javascript">
+		// 这里配置与在单独的脚本中配置没有什么区别
+		require.config({//使用require或者require是一样的
+			baseUrl:'js/lib',
+			paths:{
+				app:'../app'
+			}
+		});
+		require(['key-value'],function(kv){
+			console.log(kv);
+		});
+	</script>
+</head>
+<body>
+
+</body>
+</html>

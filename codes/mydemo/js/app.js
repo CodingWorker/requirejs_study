@@ -7,7 +7,7 @@ requirejs.config({
 });
 
 
-requirejs([/*定义依赖项*/'require','index','key-value', 'func'], function(/*依赖*/require,index,kv, func){
+requirejs([/*定义依赖项*/'require','index','key-value', 'func', 'jsonp'], function(/*依赖*/require,index,kv, func, jsonp){
 		console.log(123);
 		console.log(index);
 		console.log(kv);
@@ -16,4 +16,5 @@ requirejs([/*定义依赖项*/'require','index','key-value', 'func'], function(/
 
 		var kv2=require('key-value');//这里加载与定义依赖项等价
 		console.log(kv2);
+		console.log(jsonp);
 });
